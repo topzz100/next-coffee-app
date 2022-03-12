@@ -1,0 +1,25 @@
+.container {
+	height: calc(100vh - 100px);
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+}
+.wrapper {
+	height: 100%;
+	width: 300vw;
+	display: flex;
+}
+.imgContainer {
+	height: 100%;
+	width: 100vw;
+	position: relative;
+}
+.arrowContainer {
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	z-index: 2;
+}
