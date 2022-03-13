@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import List from '../components/List'
 
 import Slider from '../components/Slider'
 import styles from '../styles/Home.module.css'
@@ -12,6 +13,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Slider/>
+      <List/>
     </div>
   )
 }
