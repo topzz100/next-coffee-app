@@ -2,7 +2,7 @@ import React from 'react'
 import styles from '../styles/List.module.css'
 import ListCard from './ListCard'
 
-const List = () => {
+const List = ({list}) => {
   const CoffeeList = [
     {
       img: '/images/p1.jpg',
@@ -62,9 +62,9 @@ const List = () => {
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam eaque cum numquam eum commodi accusamus atque modi, neque, facilis sint vero voluptatem veritatis est harum accusantium delectus corrupti minima tenetur minus? Consectetur distinctio pariatur tempore ex nihil debitis velit molestias!
       </p>
       <div className={styles.wrapper}>
-        {CoffeeList.map((c, i) => (
-          <div className={styles.cardBox} key={i}>
-            <ListCard {...c}/>
+        {list.map((l, i) => (
+          <div className={styles.cardBox} key={l._id}>
+            <ListCard product = {l}/>
           </div>
         ))
         }
