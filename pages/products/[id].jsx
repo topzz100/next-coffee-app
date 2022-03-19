@@ -2,13 +2,16 @@ import React, { useState } from 'react'
 import styles from '../../styles/Products.module.css'
 import Image from 'next/image'
 import axios from 'axios'
+import { useSelector } from 'react-redux'
+import { selectProducts } from '../../redux/cartSlice'
 
 const Products = ({product}) => {
   const [price, setPrice] = useState(product.prices[0])
   // const [productItems, setProductItems ] = useState([])
   const [quantity, setQuantity] = useState('') 
   const [extras, setExtras] = useState([])
-   const [item, setItem] = useState({img: product.img, name: product.title, extras, quantity, price})
+  const products = useSelector(selectProducts)
+   
   
 
   const handleClick = (e, option) => {
@@ -16,17 +19,20 @@ const Products = ({product}) => {
     
     if(checked){
       setPrice(price+option.price)
-      setExtras(extras.push(option.text))
+      setExtras([...extras, option.text])
     }else{
       setPrice(price-option.price)
       setExtras(extras.filter((extra) => extra !== option.text))
+      
     }
     
   }
 
   const handleAdd = () => {
-    console.log(item)
+    console.log(price, quantity, extras)
+    
   }
+  console.log(products)
 
   
   return (
