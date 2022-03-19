@@ -4,7 +4,6 @@ import styles from '../styles/ListCard.module.css'
 import Link from 'next/link'
 
 const ListCard = ({product}) => {
-  console.log(product)
   return (
     <div className={styles.container}>
       <div className={styles.imgBox} style={{borderRadius: '50%', overflow: 'hidden'}}>
