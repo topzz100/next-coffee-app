@@ -7,7 +7,7 @@ const ListCard = ({product}) => {
   return (
     <div className={styles.container}>
       <div className={styles.imgBox} style={{borderRadius: '50%', overflow: 'hidden'}}>
-        <Link href={`/products/${product._id}`}>
+        <Link href={`/products/${product._id}`} passHref>
           <Image src={product.img} alt='' layout= 'fill' objectFit='cover'/>
         </Link>
        

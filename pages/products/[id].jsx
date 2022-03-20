@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import styles from '../../styles/Products.module.css'
 import Image from 'next/image'
 import axios from 'axios'
-import { useSelector } from 'react-redux'
-import { selectProducts } from '../../redux/cartSlice'
+import { useDispatch, useSelector } from 'react-redux'
+import { addToCart, selectProducts } from '../../redux/cartSlice'
 
 const Products = ({product}) => {
   const [price, setPrice] = useState(product.prices[0])
@@ -11,6 +11,7 @@ const Products = ({product}) => {
   const [quantity, setQuantity] = useState('') 
   const [extras, setExtras] = useState([])
   const products = useSelector(selectProducts)
+  const dispatch = useDispatch()
    
   
 
@@ -30,6 +31,7 @@ const Products = ({product}) => {
 
   const handleAdd = () => {
     console.log(price, quantity, extras)
+    dispatch(addToCart({...product, extras, quantity, price,}))
     
   }
   console.log(products)
