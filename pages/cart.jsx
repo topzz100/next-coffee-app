@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from '../styles/Cart.module.css'
 import Image from 'next/image'
 import { useDispatch, useSelector } from 'react-redux'
@@ -14,10 +14,10 @@ const cart = () => {
   const products = useSelector(selectProducts)
   const total = useSelector(selectTotal)
   const dispatch = useDispatch()
-
-  const amount = "2";
-const currency = "USD";
-const style = {"layout":"vertical"};
+ const amount = "2";
+  const currency = "USD";
+  const style = {"layout":"vertical"};
+  const [show, setShow] = useState(false)
 
 // Custom component to wrap the PayPalButtons and handle currency changes
 const ButtonWrapper = ({ currency, showSpinner }) => {
@@ -120,22 +120,34 @@ const ButtonWrapper = ({ currency, showSpinner }) => {
           <div className={styles.itemContainer}> 
             <h4 className={styles.item}>Total: <span className={ styles.amount} >{total.toFixed(2)}</span></h4>
           </div>
-          
-          <button className={styles.button}>
-            CHECKOUT NOW
-          </button>
-           <PayPalScriptProvider
+          {
+            show?
+            (
+                <>
+              <button className={styles.cash}>
+                CASH ON DELIVERY
+              </button>
+              <PayPalScriptProvider
                 options={{
-                    "client-id": "test",
-                    components: "buttons",
-                    currency: "USD"
+                  "client-id": "test",
+                  components: "buttons",
+                  currency: "USD"
                 }}
-            >
-				<ButtonWrapper
-                    currency={currency}
-                    showSpinner={false}
-                />
-			</PayPalScriptProvider>
+                >
+                <ButtonWrapper
+                  currency={currency}
+                  showSpinner={false}
+                  />
+              </PayPalScriptProvider>
+                  </>
+            ):
+                  <button className={styles.button} onClick ={()=> setShow(true)}>
+                   CHECKOUT NOW
+                 </button>
+          }
+          
+         
+           
         </div>
       </div>
     </div>
