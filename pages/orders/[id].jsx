@@ -1,8 +1,9 @@
 import React from 'react'
 import styles from '../../styles/Orders.module.css'
 import Image from 'next/image'
+import axios from 'axios';
 
-const Orders = () => {
+const Orders = ({order}) => {
   const status = 0;
 
   const statusClass = (index) => {
@@ -22,10 +23,10 @@ const Orders = () => {
             <th>Total</th>
           </tr>
           <tr>
-            <td className={styles.orderId}>12347652752826</td>
-            <td className={styles.customer}>Juliet Doe</td>
-            <td className={styles.address}>112, leeway str, Yaba</td>
-            <td className={styles.total}>$93.2</td>
+            <td className={styles.orderId}>{order._id}</td>
+            <td className={styles.customer}>{order.customer}</td>
+            <td className={styles.address}>{order.address}</td>
+            <td className={styles.total}>{order.total}</td>
           </tr>
            
         </table>
@@ -91,13 +92,13 @@ const Orders = () => {
             CART TOTAL
           </div>
           <div className={styles.itemContainer}> 
-            <h4 className={styles.item}>Subtotal: <span className={ styles.amount} >$112.4</span></h4>
+            <h4 className={styles.item}>Subtotal: <span className={ styles.amount} >${order.total}</span></h4>
           </div>
           <div className={styles.itemContainer}> 
             <h4 className={styles.item}>Discount: <span className={ styles.amount} >$0.00</span></h4>
           </div>
           <div className={styles.itemContainer}> 
-            <h4 className={styles.item}>Total: <span className={ styles.amount} >$112.4</span></h4>
+            <h4 className={styles.item}>Total: <span className={ styles.amount} >${order.total}</span></h4>
           </div>
           
           <button className={styles.button}>
@@ -107,6 +108,14 @@ const Orders = () => {
       </div>
     </div>
   )
+}
+export const getServerSideProps = async({params})=>{
+  const res = await axios.get(`http://localhost:3000/api/orders/${params.id}`)
+  return{
+    props: {
+      order: res.data
+    }
+  }
 }
 
 export default Orders
