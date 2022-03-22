@@ -1,0 +1,43 @@
+.container {
+	position: absolute;
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(128, 128, 128, 0.4);
+	left: 0;
+	right: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.wrapper {
+	padding: 20px;
+	background-color: white;
+	width: 50%;
+	border-radius: 20px;
+}
+.fullName {
+	width: 100%;
+	height: 40px;
+	padding: 5px;
+	font-size: 0.9rem;
+	margin-bottom: 10px;
+}
+.address {
+	height: 100px;
+	width: 100%;
+	resize: none;
+	margin-bottom: 10px;
+}
+.button {
+	width: 100%;
+	height: 40px;
+	border-radius: 5px;
+	background-color: orangered;
+	color: black;
+	font-weight: 600;
+	text-transform: uppercase;
+	font-size: 0.9rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

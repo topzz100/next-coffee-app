@@ -9,15 +9,33 @@ import {
     PayPalButtons,
     usePayPalScriptReducer
 } from "@paypal/react-paypal-js";
+import axios from 'axios'
+import  { useRouter } from 'next/router'
+import Payment from '../components/Payment'
 
 const cart = () => {
   const products = useSelector(selectProducts)
   const total = useSelector(selectTotal)
   const dispatch = useDispatch()
- const amount = "2";
+ const amount = total;
   const currency = "USD";
   const style = {"layout":"vertical"};
   const [show, setShow] = useState(false)
+  const router = useRouter()
+
+  const handleOrder = async(data) => {
+     try{
+       const res = await axios.post('http://localhost:3000/api/orders', data)
+       if(res.status === 201){
+        router.push('/orders/'+res.data._id)
+        
+       dispatch(reset())
+       }
+     }catch(err){
+       console.log(err) 
+     }
+
+  }
 
 // Custom component to wrap the PayPalButtons and handle currency changes
 const ButtonWrapper = ({ currency, showSpinner }) => {
@@ -61,8 +79,16 @@ const ButtonWrapper = ({ currency, showSpinner }) => {
                         });
                 }}
                 onApprove={function (data, actions) {
-                    return actions.order.capture().then(function () {
+                    return actions.order.capture().then(function (details) {
                         // Your code here after capture the order
+                      const shipping = details.purchase_units[0].shipping;
+                      handleOrder({
+                        customer: shipping.name.full_name,
+                        address: shipping.address.address_line_1,
+                        total: total,
+                        method: 1,
+                      });
+                      console.log(details)
                     });
                 }}
             />
@@ -129,7 +155,7 @@ const ButtonWrapper = ({ currency, showSpinner }) => {
               </button>
               <PayPalScriptProvider
                 options={{
-                  "client-id": "test",
+                  "client-id": "AThXcbNJwbf6yW8K5TExe2jbg2uS0uLS85TYVpiOnxWrjfLRAt7ZDyM-M7xu3WpkcAEFYNPFTZpmwRu_",
                   components: "buttons",
                   currency: "USD"
                 }}
@@ -150,6 +176,7 @@ const ButtonWrapper = ({ currency, showSpinner }) => {
            
         </div>
       </div>
+      <Payment/>
     </div>
   )
 }

@@ -1,6 +1,7 @@
 .container {
 	display: flex;
 	padding: 50px;
+	position: relative;
 }
 .left {
 	flex: 2;
