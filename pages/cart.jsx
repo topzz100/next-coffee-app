@@ -21,6 +21,7 @@ const cart = () => {
   const currency = "USD";
   const style = {"layout":"vertical"};
   const [show, setShow] = useState(false)
+  const [showModal, setShowModal] = useState(false)
   const router = useRouter()
 
   const handleOrder = async(data) => {
@@ -150,7 +151,7 @@ const ButtonWrapper = ({ currency, showSpinner }) => {
             show?
             (
                 <>
-              <button className={styles.cash}>
+              <button className={styles.cash} onClick={() => setShowModal(true)}>
                 CASH ON DELIVERY
               </button>
               <PayPalScriptProvider
@@ -176,7 +177,10 @@ const ButtonWrapper = ({ currency, showSpinner }) => {
            
         </div>
       </div>
-      <Payment/>
+      {
+        showModal &&
+        <Payment total={total} handleOrder={handleOrder} setShowModal={setShowModal}/>
+      }
     </div>
   )
 }
