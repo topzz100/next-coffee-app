@@ -32,7 +32,7 @@ const Orders = ({order}) => {
         </table>
         <div className={styles.row}>
           <div className={statusClass(0)}>
-            <Image src="/images/paid.png" width={30} height={30} alt="" />
+            <Image src="/images/paid.png" width={25} height={25} alt="" />
             <span>Payment</span>
             <div className={styles.checkedIcon}>
               <Image
@@ -101,8 +101,8 @@ const Orders = ({order}) => {
             <h4 className={styles.item}>Total: <span className={ styles.amount} >${order.total}</span></h4>
           </div>
           
-          <button className={styles.button}>
-            CHECKOUT NOW
+          <button disabled className={styles.button}>
+            PAID
           </button>
         </div>
       </div>

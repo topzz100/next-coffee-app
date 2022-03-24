@@ -80,3 +80,14 @@
 	top: -5px;
 	right: -7px;
 }
+@media (max-width: 480px) {
+	.container {
+		padding: 20px;
+	}
+	.texts {
+		display: none;
+	}
+	.item {
+		display: none;
+	}
+}

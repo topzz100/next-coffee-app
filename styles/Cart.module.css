@@ -77,3 +77,21 @@
 .cash:hover {
 	background-color: rgb(228, 228, 228);
 }
+
+@media (max-width: 480px) {
+	.container {
+		flex-direction: column;
+		padding: 20px;
+	}
+
+	.table th {
+		display: none;
+	}
+	.table tr {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 25px;
+	}
+}

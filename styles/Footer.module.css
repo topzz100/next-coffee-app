@@ -41,3 +41,19 @@
 .text {
 	line-height: 10px;
 }
+@media (max-width: 480px) {
+	.container {
+		flex-direction: column;
+		height: auto;
+	}
+	.right {
+		flex: 1;
+		flex-direction: column;
+	}
+	.title {
+		font-size: 1rem;
+	}
+	.item:first-child {
+		font-size: 1.3rem;
+	}
+}

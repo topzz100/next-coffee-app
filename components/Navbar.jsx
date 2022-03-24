@@ -33,9 +33,11 @@ const Navbar = () => {
           </li>
           <li className={styles.item}>Products</li>
           <li className={styles.item}>Menu</li>
-          <div className={styles.logo}>
-            <span className={styles.dot}></span><h3 className={styles.logoText}>HOLAR</h3><span className={styles.dot}></span>
-          </div>
+          <Link href={'/'} passHref>
+            <div className={styles.logo}>
+              <span className={styles.dot}></span><h3 className={styles.logoText}>HOLAR</h3><span className={styles.dot}></span>
+            </div>
+          </Link>
           <li className={styles.item}>Events</li>
           <li className={styles.item}>Blog</li>
           <li className={styles.item}>Contact</li>

@@ -113,7 +113,7 @@ const ButtonWrapper = ({ currency, showSpinner }) => {
             products.map((p) => (
               <tr key={p._id}>
                 <td>
-                <Image src ={p.img} width='100px' height='100px' objectFit='contain'/>
+                <Image src ={p.img} width='100px' height='100px' objectFit='cover'/>
                 </td>
                 <td className={styles.name}>{p.title}</td>
                 <td className={styles.extras}>

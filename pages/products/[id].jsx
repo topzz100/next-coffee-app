@@ -8,7 +8,7 @@ import { addToCart, selectProducts } from '../../redux/cartSlice'
 const Products = ({product}) => {
   const [price, setPrice] = useState(product.prices[0])
   // const [productItems, setProductItems ] = useState([])
-  const [quantity, setQuantity] = useState('') 
+  const [quantity, setQuantity] = useState(1) 
   const [extras, setExtras] = useState([])
   const products = useSelector(selectProducts)
   const dispatch = useDispatch()
@@ -40,7 +40,10 @@ const Products = ({product}) => {
   return (
     <div className={styles.container}>
       <div className={styles.left}>
-        <Image src={product.img} layout='fill' objectFit='contain'/>
+        <div className={styles.imgCon}>
+
+          <Image src={product.img} layout='fill' objectFit='contain'/>
+        </div>
       </div>
       <div className={styles.right}>
         <div className={styles.title}>
@@ -102,7 +105,7 @@ const Products = ({product}) => {
           
         </div>
         <div className={styles.cart}>
-          <input type="number" className={styles.input} onChange={(e)=> setQuantity(e.target.value)}/>
+          <input type="number" className={styles.input} value = {quantity} onChange={(e)=> setQuantity(e.target.value)}/>
           <button type='submit'  className={styles.submit} onClick={handleAdd}>
             Add To cart
           </button>
