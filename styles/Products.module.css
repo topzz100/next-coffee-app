@@ -27,7 +27,7 @@
 	margin-bottom: 15px;
 }
 .price {
-	color: orangered;
+	color: #5a0909;
 	text-decoration: underline;
 	font-size: 1.5rem;
 	margin-bottom: 15px;
@@ -52,6 +52,15 @@
 	width: 100px;
 	height: 100px;
 	position: relative;
+	opacity: 0.5;
+}
+.checked {
+	margin-right: 20px;
+	width: 100px;
+	height: auto;
+	position: relative;
+	opacity: 1;
+	box-shadow: 1px 4px 4px rgb(219, 206, 206);
 }
 .size {
 	position: absolute;
@@ -85,12 +94,15 @@
 }
 .submit {
 	height: 40px;
-	background-color: orangered;
+	background-color: #5a0909;
 	padding: 0 10px;
 	color: white;
 	margin-left: 10px;
 	border: none;
 	font-size: 1.1rem;
+}
+.submit:hover {
+	background-color: #9e1313;
 }
 @media (max-width: 480px) {
 	.container {

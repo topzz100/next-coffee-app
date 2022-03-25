@@ -6,6 +6,6 @@ const nextConfig = {
 module.exports = {
   nextConfig,
  images: {
-    domains: ['cdn.pixabay.com', 'coffeeaffection.com', 'upload.wikimedia.org', 'crayonsandcravings.com'],
+    domains: ['cdn.pixabay.com', 'coffeeaffection.com', 'upload.wikimedia.org', 'crayonsandcravings.com', 'thumbs.dreamstime.com', 'www.caffesociety.co.uk', 'd.newsweek.com', 'elfuego.uk'],
   },
 } 

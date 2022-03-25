@@ -1,5 +1,5 @@
 .container {
-	background-color: orangered;
+	background-color: rgb(90, 9, 9);
 	height: 100px;
 	width: 100%;
 	padding: 50px;
@@ -44,6 +44,7 @@
 .logo {
 	display: flex;
 	align-items: center;
+	cursor: pointer;
 }
 
 .logoText {

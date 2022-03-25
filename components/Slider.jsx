@@ -19,15 +19,16 @@ const Slider = () => {
 
   const imgArr = [
     {
-      img: '/images/feature1.jpg',
+      // img: '/images/feature1.jpg',
+      img: 'https://www.caffesociety.co.uk/blog/wp-content/upLoads/2019/02/Caffe-Society-Espresso-Expresso-Epresso-Coffee.jpg',
       desc: 'THE BEST IN THE COUNTRY'
     },
     {
-      img: '/images/feature2.jpg',
+      img: 'https://d.newsweek.com/en/full/1001693/coffee-espresso-stock.jpg',
       desc: 'NOTHING TASTES BETTER'
     },
     {
-      img: '/images/feature4.jpg',
+      img: 'https://elfuego.uk/wp-content/uploads/2019/11/Espresso.jpeg',
       desc: 'ORDER NOW'
     }
   ]

@@ -25,3 +25,10 @@
 	margin-top: 10px;
 	text-align: center;
 }
+@media (max-width: 480px) {
+	.imgBox {
+		width: 200px;
+		height: 200px;
+		margin: auto;
+	}
+}

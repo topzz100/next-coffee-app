@@ -18,7 +18,7 @@ const Payment = ({ total, handleOrder, setShowModal}) => {
         <div onClick={()=> setShowModal(false)}>
           <Close/>
         </div>
-        <h4 className={styles.header} > You will pay $5 charge on delivery</h4>
+        <h4 className={styles.header} > You will pay a $5 charge on delivery</h4>
         <label htmlFor="fullName" className={styles.label}>Fullname</label>
         <input placeholder='Enter your fullname' type="text" className={styles.fullName} id='fullName' onChange={(e)=>setCustomer(e.target.value)}/>
         <label htmlFor="phone" className={styles.label}>Phone number</label>
