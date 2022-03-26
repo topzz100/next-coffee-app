@@ -64,7 +64,7 @@ const Products = ({ product }) => {
       <div className={styles.left}>
         <div className={styles.imgCon}>
 
-          <Image src={product.img} layout='fill' objectFit='contain' />
+          <Image src={product.img} alt='' layout='fill' objectFit='contain' />
         </div>
       </div>
       <div className={styles.right}>
@@ -82,19 +82,19 @@ const Products = ({ product }) => {
         </h4>
         <div className={styles.options}>
           <div className={showSmall ? styles.checked : styles.imgBox} onClick={() => { handleCheck(0) }}>
-            <Image src='/images/product.jpg' layout='fill' objectFit='contain' />
+            <Image src='/images/product.jpg' alt='' layout='fill' objectFit='contain' />
             <div className={styles.size}>
               small
             </div>
           </div>
           <div className={showMedium ? styles.checked : styles.imgBox} onClick={() => { handleCheck(1) }}>
-            <Image src='/images/product.jpg' layout='fill' objectFit='contain' />
+            <Image src='/images/product.jpg' alt='' layout='fill' objectFit='contain' />
             <div className={styles.size}>
               medium
             </div>
           </div>
           <div className={showBig ? styles.checked : styles.imgBox} onClick={() => { handleCheck(2) }} >
-            <Image src='/images/product.jpg' layout='fill' objectFit='contain' />
+            <Image src='/images/product.jpg' alt='' layout='fill' objectFit='contain' />
             <div className={styles.size}>
               large
             </div>

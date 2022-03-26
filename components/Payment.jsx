@@ -1,7 +1,5 @@
 import { Close } from '@material-ui/icons'
 import React, { useState } from 'react'
-// import { useSelector } from 'react-redux'
-// import { selectTotal } from '../redux/cartSlice'
 import styles from '../styles/Payment.module.css'
 
 const Payment = ({ total, handleOrder, setShowModal}) => {

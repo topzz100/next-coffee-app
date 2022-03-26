@@ -11,7 +11,7 @@ const Navbar = () => {
     <div className={styles.container}>
       <div className={styles.left}>
         <div className={styles.callButton}>
-          <Image src='/images/telephone.png' width='30px' height='30px'/>
+          <Image src='/images/telephone.png' alt='' width='30px' height='30px'/>
         </div>
         <div className={styles.texts}>
           <div className={styles.text}>
@@ -48,7 +48,7 @@ const Navbar = () => {
       <div className={styles.right}>
         <div className={styles.cartBox}>
           <Link href={'/cart'} passHref>
-            <Image src='/images/cart.png' width= '30px' height='30px'/>
+            <Image src='/images/cart.png' alt='' width= '30px' height='30px'/>
           </Link>
           
           <div className={styles.amount}>{cartQuantity}</div>

@@ -35,19 +35,19 @@ const Slider = () => {
   return (
     <div className = { styles.container}>
       <div className={styles.arrowContainer} style={{left: '0'}} onClick = {() => handleSlide('left')}>
-        <Image src='/images/arrowl.png' layout='fill'/>
+        <Image src='/images/arrowl.png' alt='' layout='fill'/>
       </div>
       
       <div className={styles.wrapper}>
         {imgArr.map((item, i) => (
           <div className={styles.imgContainer} key={i} style={{transform:`translateX(${-100*index}vw)`}}>
-            <Image src={item.img} layout='fill' objectFit='cover'/>
+            <Image src={item.img} alt='' layout='fill' objectFit='cover'/>
           </div>
         ))}
       </div>
 
       <div className={styles.arrowContainer} style={{right: '0'}}>
-        <Image src='/images/arrowr.png' layout='fill' onClick = {() => handleSlide('right')}/> 
+        <Image src='/images/arrowr.png' alt='' layout='fill' onClick = {() => handleSlide('right')}/> 
       </div>
      
       

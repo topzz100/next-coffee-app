@@ -32,7 +32,7 @@ const Orders = ({order}) => {
         </table>
         <div className={styles.row}>
           <div className={statusClass(0)}>
-            <Image src="/images/paid.png" width={25} height={25} alt="" />
+            <Image src="/images/paid.png"  width={25} height={25} alt="" />
             <span>Payment</span>
             <div className={styles.checkedIcon}>
               <Image

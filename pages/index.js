@@ -8,8 +8,8 @@ export default function Home({list}) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Pizza shop</title>
-        <meta name="description" content="best pizza shop in Lagos" />
+        <title>Coffee shop</title>
+        <meta name="description" content="best coffee shop in Lagos" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Slider/>

@@ -13,7 +13,7 @@ import axios from 'axios'
 import  { useRouter } from 'next/router'
 import Payment from '../components/Payment'
 
-const cart = () => {
+const Cart = () => {
   const products = useSelector(selectProducts)
   const total = useSelector(selectTotal)
   const dispatch = useDispatch()
@@ -113,7 +113,7 @@ const ButtonWrapper = ({ currency, showSpinner }) => {
             products.map((p) => (
               <tr key={p._id}>
                 <td>
-                <Image src ={p.img} width='100px' height='100px' objectFit='cover'/>
+                <Image src ={p.img} alt='' width='100px' height='100px' objectFit='cover'/>
                 </td>
                 <td className={styles.name}>{p.title}</td>
                 <td className={styles.extras}>
@@ -185,4 +185,4 @@ const ButtonWrapper = ({ currency, showSpinner }) => {
   )
 }
 
-export default cart
+export default Cart
